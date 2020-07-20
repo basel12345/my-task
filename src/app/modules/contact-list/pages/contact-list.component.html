@@ -1,0 +1,56 @@
+  <header>
+    <i *ngIf="!disappearIcon" class="fa fa-search" aria-hidden="true"></i>
+    <input type="text" name="search" placeholder="Search Contacts" [(ngModel)]="searchText" autofocus>
+  </header>
+  <main>
+    <div class="add">
+      <span>Add New Contacts</span>
+      <a (click)="addContact()">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      </a>
+    </div>
+    <hr>
+    <div class="contacts" *ngIf="!searchText">
+      <span>Latest Contacts</span>
+    </div>
+    <div class="data" *ngIf="!searchText">
+     <div *ngFor="let res of LastestContact">
+      <div class="person">
+        <div class="images">
+          <img [src]="placeholderImage" [alt]="res.firstName">
+         </div>
+         <div class="info">
+           <div>{{res.firstName}} {{res.lastName}}</div>
+           <div>{{res.email}}</div>
+         </div>
+      </div>
+      <hr>
+     </div>
+    </div>
+    <div class="groupedData">
+     <div *ngFor="let res of groupedData  | keyvalue; let i = index">
+      <div id="{{res.key}}" class="contacts" *ngIf="!searchText">
+        <span>{{res.key}}</span>
+      </div>
+        <div class="person" *ngFor="let data of res.value | appFilter: searchText">
+          <div>
+            <div class="images">
+              <img [src]="placeholderImage" [alt]="data.firstName">
+            </div>
+             <div class="info">
+               <div>{{data.firstName}} {{data.lastName}}</div>
+               <div *ngIf="!data.firstName">Not Found</div>
+               <div>{{data.email }}</div>
+               <div *ngIf="!data.email">Not Found</div>
+             </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+     <div *ngIf="!searchText" class="letter">
+      <div class="search">
+        <a *ngFor="let res of groupedData  | keyvalue;" (click)="scroll(res.key)">{{res.key}}</a>
+      </div>
+    </div>
+    </div>
+  </main>

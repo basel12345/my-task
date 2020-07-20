@@ -1,0 +1,235 @@
+/* start header */
+
+header {
+  background-color: #dbdada;
+  border-top-right-radius: 11px;
+  border-top-left-radius: 11px;
+  position: relative;
+}
+
+header input {
+  width: 95%;
+  margin: 7px 15px;
+  height: 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 22px;
+}
+
+header input:focus {
+  outline: none !important;
+}
+
+header .fa-search {
+  color: #dbdada;
+  position: absolute;
+  left: 37%;
+  top: 12px;
+}
+
+header input::placeholder {
+  text-align: center;
+  color: #dbdada;
+  font-size: 18px;
+}
+
+header input:-ms-input-placeholder {
+  text-align: center;
+}
+
+header input::-ms-input-placeholder {
+  text-align: center;
+}
+
+/* end header */
+
+/* start main */
+
+main {
+  width: 100%;
+}
+
+
+main .add,
+main .contacts {
+  background-color: #f3f3f3;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* start div add */
+main .add{
+  display: flex;
+  padding: 8px 19px;
+  color: #7e7979;
+}
+
+main .add span {
+  flex-grow: 1;
+}
+
+main .add .fa-plus {
+  flex-grow: 1;
+  direction: rtl;
+}
+
+main .add a {
+  transition: all .3s ease-in-out;
+}
+
+main .add a:hover {
+  cursor: pointer;
+  transform: rotate(360deg) scale(2);
+}
+/* end div add */
+
+hr {
+  margin: 0;
+  border: 1px solid #e7e2e2;
+}
+
+/* start div contacts */
+main .contacts {
+  padding: 2px 19px;
+}
+/* end div contacts */
+
+/* start data latest contacts */
+main .person {
+  margin: 0;
+  padding: 0 19px;
+}
+
+main .data div .person {
+  display: flex;
+  margin: 9px 0px;
+}
+
+main .data div:hover {
+ background-color: whitesmoke;
+ cursor: pointer;
+}
+
+main .data div .info{
+  flex-grow: 2;
+  display: grid;
+}
+
+main .data div hr{
+ display: block;
+}
+
+main .data div .info div {
+  margin: 0;
+  color: #acabab;
+}
+
+
+
+main .data div .info div:nth-child(1) {
+  font-size: 22px;
+  font-weight: 500;
+  color: #999797;
+}
+
+main .data .images {
+  flex-grow: .02;
+  height: 44px;
+  margin-top: 15px;
+}
+
+main .data .images img {
+  width: 47px;
+  border-radius: 50%;
+}
+/* end data latest contacts */
+
+/* end main */
+
+.letter {
+  position: sticky;
+  bottom: 300px;
+  margin-right: 24px;
+}
+
+.letter .search {
+  width: 100%;
+  direction: rtl;
+}
+
+.letter div a {
+  display: block;
+  text-align: center;
+  width: 15px;
+  background-color: #fcfcfc;
+}
+
+.letter div a:hover {
+  color: black;
+  font-weight: 700;
+}
+
+main .groupedData .person div {
+  display: flex;
+  margin: 9px 0px;
+}
+
+
+main .groupedData div:hover {
+  color: #7e7979;
+  cursor: pointer;
+}
+
+main .groupedData div .info{
+  flex-grow: 2;
+  display: grid;
+}
+
+main .groupedData div hr{
+ display: block;
+}
+
+main .groupedData div .info div {
+  margin: 0;
+  color: #acabab;
+}
+
+
+
+main .groupedData div .info div:nth-child(1) {
+  font-size: 22px;
+  font-weight: 500;
+  color: #999797;
+}
+
+main .groupedData .images {
+  flex-grow: .02;
+  height: 44px;
+  margin-top: 15px;
+}
+
+main .groupedData .images img {
+  width: 47px;
+  border-radius: 50%;
+}
+
+.person hr {
+  width: 95%;
+}
+
+/* start media query  */
+@media only screen and (max-width: 470px) {
+  header .fa-search {
+    left: 28%;
+    top: 15px;
+  }
+}
+
+@media (min-width: 470px) and (max-width: 784px) {
+  header .fa-search {
+    left: 33%;
+    top: 15px;
+  }
+}
+/* end media query  */
+

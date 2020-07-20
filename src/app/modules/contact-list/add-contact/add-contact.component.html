@@ -1,0 +1,50 @@
+<header>
+  <span> Add a New Contact</span>
+</header>
+<main>
+  <form #AddContact="ngForm"  (ngSubmit)="AddContact.form.valid && onSubmit(AddContact)">
+    <div class="file">
+      <img [src]="Contact.image">
+      <input type="file" (change)="hanedlFileInput($event)" accept=".jpeg, .png, .jpg">
+      <div>
+        <label>Add Photo</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" name="firstName" placeholder="First Name" class="form-control" [(ngModel)]="Contact.firstName" #firstName="ngModel"
+        [ngClass]="{ 'is-invalid': AddContact.submitted && firstName.invalid }" required>
+      <div class="invalid-feedback" *ngIf="AddContact.submitted && firstName.invalid">
+        <p *ngIf="firstName.errors.required">First Name is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" name="lastName" placeholder="Last Name" class="form-control" [(ngModel)]="Contact.lastName" #lastName="ngModel"
+        [ngClass]="{ 'is-invalid': AddContact.submitted && lastName.invalid }" required>
+      <div class="invalid-feedback" *ngIf="AddContact.submitted && lastName.invalid">
+        <p *ngIf="lastName.errors.required">Last Name is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="number"  name="code" class="code" [(ngModel)]="Contact.code">
+      <input type="text" name="number" appMobileNumber placeholder="Mobile" class="form-control mobile" [(ngModel)]="Contact.number" #number="ngModel"
+        [ngClass]="{ 'is-invalid': AddContact.submitted && number.invalid }" required>
+      <div class="invalid-feedback" *ngIf="AddContact.submitted && number.invalid">
+        <p *ngIf="number.errors.required">Mobile is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" placeholder="Email address" class="form-control" name="email" [(ngModel)]="Contact.email" #email="ngModel"
+        [ngClass]="{ 'is-invalid': AddContact.submitted && email.invalid }" email required>
+      <div *ngIf="AddContact.submitted && email.invalid" class="invalid-feedback">
+        <p *ngIf="email.errors.required">Email is required</p>
+        <p *ngIf="email.errors.email">Must be a valid email address</p>
+      </div>
+    </div>
+    <div class="form-group button">
+      <button class="success" type="submit">Add Contact</button>
+    </div>
+    <div class="form-group button">
+      <button class="primary" type="button" (click)="cancael()">Cancel</button>
+    </div>
+  </form>
+</main>

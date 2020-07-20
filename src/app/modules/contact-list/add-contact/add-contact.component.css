@@ -1,0 +1,166 @@
+/* start header */
+header {
+  position: relative;
+}
+
+header span {
+  font-size: 37px;
+  color: #7e7979;
+}
+
+header span,
+label {
+  font-family: sans-serif;
+}
+
+header span::after {
+  opacity: 0.3;
+  position: absolute;
+  top: 57px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  content: "";
+  border-bottom: 2px solid #27d5a5;
+  width: 100%;
+}
+/* end header */
+
+main {
+  margin: 38px 0px;
+}
+
+main form .form-group {
+  width: 100%;
+}
+
+main form .form-group input {
+  font-size: 24px;
+  height: 45px;
+  width: 100%;
+  margin: 34px 0 0 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid #27d5a5;
+  opacity: 0.3;
+}
+
+main form p {
+  color: red;
+  font-size: 24px;
+}
+
+/* start input */
+main form .form-group input:focus {
+  outline: none !important;
+}
+
+main form .form-group input::placeholder {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+main form .form-group input:-ms-input-placeholder {
+  font-family: sans-serif;
+}
+
+main form .form-group input::-ms-input-placeholder {
+  font-family: sans-serif;
+}
+/* end input */
+
+
+/* start file */
+main form .file {
+  position: relative;
+  text-align: center;
+}
+
+main form .file img {
+  width: 134px;
+  border-radius: 50%;
+}
+
+main form .file input {
+  position: absolute;
+  top: 19px;
+  right: 220px;
+  height: 135px;
+  opacity: 0;
+}
+main form .file label {
+  color: #ccc9c9;
+  font-weight: 600;
+}
+
+main form .file img:hover,
+main form .file input:hover {
+  cursor: pointer;
+}
+/* end file */
+
+/* start button */
+.button {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.button button {
+  padding: 11px 4px;
+  color: white;
+  width: 311px;
+  border: none;
+  border-radius: 7px;
+  font-size: 24px;
+  font-family: sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+
+.button .success {
+  background-color: #21be93;
+  margin-top: 25px;
+}
+
+.button .success:hover,
+.button .success:focus,
+.button .success:active {
+  outline: none !important;
+  background-color: white;
+  color: #21be93;
+  cursor: pointer;
+}
+
+.button .primary {
+  background-color: #0656bc;
+}
+
+.button .primary:hover,
+.button .success:focus,
+.button .primary:active {
+  outline: none !important;
+  background-color: white;
+  color: #0656bc;
+  cursor: pointer;
+}
+/* end button */
+
+.code {
+  width: 20% !important;
+  margin-right: 10px !important;
+  text-align: right !important;
+}
+
+.mobile {
+  width: 77% !important;
+}
+
+/* start media query  */
+@media only screen and (max-width: 550px) {
+  .code {
+    margin-right: 5px !important;
+    width: 10% !important;
+  }
+}
+/* end media query  */
